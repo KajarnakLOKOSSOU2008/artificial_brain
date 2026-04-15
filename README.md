@@ -370,7 +370,7 @@ Les contributions sont les bienvenues!
 
 ## 📝 Changelog
 
-### v1.0.0 (2024-04-15)
+### v1.0.0 (2026-04-15)
 - ✅ Système complet de perception
 - ✅ Mémoire multi-niveaux
 - ✅ Apprentissage et raisonnement
@@ -378,7 +378,7 @@ Les contributions sont les bienvenues!
 - ✅ API complète
 - ✅ Interface web interactive
 
-### v0.9.0 (2024-04-10)
+### v0.9.0 ( A  venir )
 - 🔨 Architecture de base
 
 ## 🐛 Signaler des Bugs
@@ -453,5 +453,5 @@ Inspiré par:
 ```
 
 **Status**: ✅ Stable & Production Ready  
-**Last Updated**: 2024-04-15  
+**Last Updated**: 2026-04-15  
 **Version**: 1.0.0
