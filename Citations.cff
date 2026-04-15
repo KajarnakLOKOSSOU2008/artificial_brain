@@ -1,0 +1,10 @@
+# **cff-version: 1.0.0**
+message: "Si vous utilisez ce logiciel ou ces travaux de recherche, merci de les citer comme suit."
+authors:
+  - family-names: "LOKOSSOU"
+    given-names: "Dossou Kajarnak"
+    orcid: 0009-0001-9379-9493
+title: "Artificial Brain Project: Une architecture d'IA inspirée par le cerveau humain"
+version: 1.0.0
+date-published: 2026-04-15
+url: "https://github.com/KajarnakLOKOSSOU2008/artificial_brain/"
