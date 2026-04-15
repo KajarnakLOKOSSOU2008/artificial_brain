@@ -660,7 +660,7 @@ Créez une issue avec:
 ### Ressources
 - [Architecture Details](./ARCHITECTURE.md)
 - [API Documentation](./API.md)
-- [GitHub Issues](https://github.com/yourusername/artificial-brain/issues)
+- [GitHub Issues](https://github.com/KajarnakLOKOSSOU2008/artificial-brain/issues)
 
 ---
 
@@ -670,12 +670,13 @@ MIT License - Libre d'utilisation
 
 ## Auteur
 
-Créé avec 🧠 et ❤️ pour avancer l'IA
+Créé avec 🧠 et ❤️ pour avancer l'IA par Dossou  Kajarnak LOKOSSOU
 
 ---
 
+
 **Version**: 1.0.0  
-**Dernière mise à jour**: 2024-04-15  
+**Dernière mise à jour**: 2026-04-15  
 **Status**: Stable ✅
 
 ```
