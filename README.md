@@ -415,9 +415,11 @@ Créez une issue avec:
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/artificial-brain/issues)
-- **Email**: support@artificial-brain.ai
-- **Discord**: [Join our community](https://discord.gg/artificial-brain)
+- **Issues**: [GitHub Issues](https://github.com/KajarnakLOKOSSOU2008/artificial-brain/issues)
+- **Email**: KajarnakTechIA@outlook.com
+- **Discord**: [Join me on Linkeldn] www.linkedin.com/in/kajarnak-lokossou-a45674384
+
+
 
 ## 📄 Licence
 
