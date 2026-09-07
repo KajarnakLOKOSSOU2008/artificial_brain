@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>artificial_brain — An intelligent system mimicking human brain functionalities.</title>
+<meta name="description" content="An AI system inspired by the human brain — neural networks, decision-making and adaptive learning capabilities.">
+<meta name="keywords" content="artificial intelligence, neural networks, brain simulation, cognitive AI, deep learning, adaptive systems">
+<meta name="author" content="Lokossou Dossou Kajarnak · Kajarnak Tech">
+<meta property="og:title" content="artificial_brain — An intelligent system mimicking human brain functionalities.">
+<meta property="og:description" content="An AI system inspired by the human brain — neural networks, decision-making and adaptive learning capabilities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kajarnaklokossou2008.github.io/artificial_brain/">
+<meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect fill='%2308080a' width='1200' height='630'/%3E%3Ctext x='600' y='305' font-family='Inter,sans-serif' font-size='80' font-weight='900' fill='%23a78bfa' text-anchor='middle'%3Eartificial_brain%3C/text%3E%3Ctext x='600' y='375' font-family='Inter,sans-serif' font-size='28' font-weight='500' fill='%23a8a8b3' text-anchor='middle'%3EAn intelligent system mimicking human brain functionalities.%3C/text%3E%3C/svg%3E">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="artificial_brain — An intelligent system mimicking human brain functionalities.">
+<meta name="twitter:description" content="An AI system inspired by the human brain — neural networks, decision-making and adaptive learning capabilities.">
+<link rel="canonical" href="https://kajarnaklokossou2008.github.io/artificial_brain/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308080a'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-size='18' font-weight='900' fill='%23a78bfa' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "artificial_brain",
+  "description": "An AI system inspired by the human brain \u2014 neural networks, decision-making and adaptive learning capabilities.",
+  "codeRepository": "https://github.com/KajarnakLOKOSSOU2008/artificial_brain",
+  "url": "https://kajarnaklokossou2008.github.io/artificial_brain/",
+  "programmingLanguage": "Python, PyTorch, NumPy, scikit-learn",
+  "keywords": "artificial intelligence, neural networks, brain simulation, cognitive AI, deep learning, adaptive systems",
+  "author": {
+    "@type": "Person",
+    "name": "Lokossou Dossou Kajarnak"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kajarnak Tech"
+  },
+  "license": "https://opensource.org/licenses/MIT"
+}
+</script>
+<style>
+/* ===== KAJARNAK SHARED DESIGN SYSTEM (inlined) ===== */
+/* KAJARNAK PROJECTS — Shared Design System */
+:root{
+  --bg:#08080a;--bg-card:#0d0d10;--surface:#14141c;--border:#1f1f29;--border-hover:#2e2e3a;
+  --text:#f1f1f5;--text-secondary:#a8a8b3;--text-muted:#5e5e6a;
+  --accent:#22d3ee;--accent-light:#67e8f9;--accent-glow:rgba(34,211,238,.14);
+  --purple:#a78bfa;--green:#34d399;--amber:#fbbf24;--red:#f87171;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:'JetBrains Mono','Fira Code',monospace;
+  --radius:14px;--radius-sm:10px;--transition:.3s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="light"]{
+  --bg:#fafafa;--bg-card:#fff;--surface:#f3f3f5;--border:#e4e4e8;--border-hover:#d0d0d6;
+  --text:#16161a;--text-secondary:#52525b;--text-muted:#a1a1aa;
+  --accent:#0891b2;--accent-light:#06b6d4;--accent-glow:rgba(8,145,178,.08);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,textarea,select{font-family:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;backdrop-filter:blur(20px);background:rgba(8,8,10,.8);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:800;font-size:1.1rem;font-family:var(--mono);display:flex;align-items:center;gap:2px}
+.nav-logo em{color:var(--accent);font-style:normal}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:.86rem;color:var(--text-secondary);transition:var(--transition)}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:8px 18px;background:var(--accent);color:var(--bg)!important;border-radius:8px;font-weight:600;font-size:.84rem;transition:var(--transition)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
+.theme-toggle{width:38px;height:38px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.theme-toggle:hover{border-color:var(--accent);transform:rotate(20deg)}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-gradient{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3;animation:float 20s ease-in-out infinite}
+.hero-gradient.g1{top:-180px;right:-100px;width:500px;height:500px;background:var(--accent)}
+.hero-gradient.g2{bottom:-200px;left:-120px;width:500px;height:500px;background:var(--purple);animation-delay:-7s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%)}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);border-radius:100px;font-size:.76rem;font-weight:600;color:var(--green);margin-bottom:24px;font-family:var(--mono)}
+.hero-badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2rem,5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+.gradient-text{background:linear-gradient(135deg,var(--accent-light),var(--purple),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-subtitle{font-size:clamp(1rem,2vw,1.15rem);color:var(--text-secondary);max-width:580px;margin:0 auto 32px;line-height:1.7}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:11px;font-weight:600;font-size:.93rem;transition:var(--transition);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--accent);color:var(--bg);box-shadow:0 0 32px var(--accent-glow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(34,211,238,.4)}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+/* SECTIONS */
+section{padding:80px 24px}
+.section-label{font-family:var(--mono);font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px;display:inline-flex;align-items:center;gap:8px}
+.section-label::before{content:'';width:24px;height:1.5px;background:var(--accent)}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.section-desc{font-size:.98rem;color:var(--text-secondary);max-width:580px;line-height:1.7;margin-bottom:40px}
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:var(--transition)}
+.card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.card .icon{font-size:2rem;margin-bottom:12px}
+.card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--text-secondary);line-height:1.6}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{padding:4px 11px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:.72rem;font-family:var(--mono);color:var(--text-secondary);transition:var(--transition)}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+/* FOOTER */
+footer{padding:40px 24px;border-top:1px solid var(--border);text-align:center}
+footer p{color:var(--text-muted);font-size:.82rem;font-family:var(--mono)}
+footer a{color:var(--accent)}
+/* INPUTS */
+input,textarea,select{padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-size:.92rem;outline:none;transition:var(--transition);width:100%}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+textarea{min-height:100px;resize:vertical}
+label{display:block;font-size:.84rem;font-weight:600;margin-bottom:6px;color:var(--text-secondary)}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero{padding:100px 16px 60px}
+  section{padding:60px 16px}
+  .card-grid{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column}
+}
+
+
+/* ===== artificial_brain-SPECIFIC CSS ===== */
+.project-accent{--accent:#a78bfa;--accent-glow:#a78bfa22;}
+.code-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 26px;font-family:var(--mono);font-size:.84rem;line-height:1.85;overflow-x:auto;position:relative}
+.code-block::before{content:'$  artificial_brain.py';position:absolute;top:12px;right:16px;font-size:.7rem;color:var(--text-muted);font-family:var(--mono);opacity:.6}
+.code-line{display:flex;justify-content:space-between;gap:18px}
+.code-text{color:var(--text);white-space:pre}
+.code-comment{color:var(--text-muted);font-style:italic;flex-shrink:0}
+.tech-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;justify-content:center}
+.uc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:32px}
+.uc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;gap:14px;align-items:flex-start;transition:var(--transition)}
+.uc-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.uc-icon{font-size:1.7rem;width:42px;height:42px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.uc-card h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.uc-card p{font-size:.83rem;color:var(--text-secondary);line-height:1.55}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:48px 0}
+.stat-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center;transition:var(--transition)}
+.stat-block:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 32px var(--accent-glow)}
+.stat-num{font-size:2.4rem;font-weight:900;font-family:var(--mono);background:linear-gradient(135deg,var(--accent-light),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em}
+.stat-lbl{font-size:.78rem;color:var(--accent);font-family:var(--mono);font-weight:600;margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+.stat-desc{font-size:.78rem;color:var(--text-secondary);margin-top:4px}
+.arch-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+@media(max-width:768px){.arch-grid{grid-template-columns:1fr}.code-block::before{display:none}}
+.giant-emoji{font-size:5rem;line-height:1;display:block;margin-bottom:18px;filter:drop-shadow(0 0 24px var(--accent-glow))}
+.section-cta{text-align:center;padding:80px 24px;background:radial-gradient(ellipse at center,var(--accent-glow),transparent 70%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.repo-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.82rem;color:var(--accent);margin-top:24px;padding:8px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;transition:var(--transition)}
+.repo-link:hover{border-color:var(--accent);transform:translateY(-1px)}
+.nav-logo-emoji{margin-right:6px}
+</style>
+</head>
+<body class="project-accent">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="nav-logo-emoji">🧠</span>artificial_brain</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#tech">Tech</a>
+      <a href="https://github.com/KajarnakLOKOSSOU2008/artificial_brain" target="_blank" rel="noopener" class="nav-cta">★ GitHub</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-gradient g1"></div>
+    <div class="hero-gradient g2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge"><span class="dot"></span>Open source · MIT License</span>
+    <span class="giant-emoji">🧠</span>
+    <h1>artificial_brain</h1>
+    <p class="hero-subtitle" style="font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--text);font-weight:500;margin-bottom:24px">An intelligent system mimicking human brain functionalities.</p>
+    <p class="hero-subtitle">An AI system inspired by the human brain — neural networks, decision-making and adaptive learning capabilities.</p>
+    <div class="hero-ctas">
+      <a href="https://github.com/KajarnakLOKOSSOU2008/artificial_brain" target="_blank" rel="noopener" class="btn btn-primary">★ View on GitHub →</a>
+      <a href="#features" class="btn btn-secondary">Explore features</a>
+    </div>
+    <div class="tech-bar">
+      <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span>
+    </div>
+    <a href="https://github.com/KajarnakLOKOSSOU2008/artificial_brain" target="_blank" rel="noopener" class="repo-link">🔗 github.com/KajarnakLOKOSSOU2008/artificial_brain</a>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Everything you need, batteries included</h2>
+    <p class="section-desc">artificial_brain ships with a focused set of production-ready capabilities. No bloat — just the tools that make a real difference in day-to-day work.</p>
+    <div class="card-grid">
+      <div class="card">
+          <div class="icon">🧬</div>
+          <h3>Neural Network Architecture</h3>
+          <p>Modular, biologically-inspired network with cortical areas, feed-forward &amp; recurrent pathways and sparse connectivity.</p>
+        </div><div class="card">
+          <div class="icon">🔄</div>
+          <h3>Adaptive Learning</h3>
+          <p>Online / continual learning via Hebbian + reinforcement signals — no full retraining required for new tasks.</p>
+        </div><div class="card">
+          <div class="icon">🎯</div>
+          <h3>Decision Making</h3>
+          <p>Hierarchical decision module with confidence-weighted outputs and exploration / exploitation balancing.</p>
+        </div><div class="card">
+          <div class="icon">👁</div>
+          <h3>Pattern Recognition</h3>
+          <p>Classifies sequences, images and tabular patterns with attention-driven feature selection.</p>
+        </div><div class="card">
+          <div class="icon">💾</div>
+          <h3>Memory System</h3>
+          <p>Short-term working memory + long-term episodic store with consolidation and forgetting curves.</p>
+        </div><div class="card">
+          <div class="icon">🔬</div>
+          <h3>Cognitive Simulation</h3>
+          <p>Run controlled experiments on perception, memory and decision cycles — export traces for analysis.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row container">
+  <div class="stat-block"><div class="stat-num">6</div><div class="stat-lbl">+</div><div class="stat-desc">Cortical modules</div></div><div class="stat-block"><div class="stat-num">100</div><div class="stat-lbl">k</div><div class="stat-desc">Neurons / region</div></div><div class="stat-block"><div class="stat-num">82</div><div class="stat-lbl">%</div><div class="stat-desc">Adaptive accuracy</div></div><div class="stat-block"><div class="stat-num">120</div><div class="stat-lbl">ms</div><div class="stat-desc">Decision cycle</div></div>
+</div>
+
+<section id="architecture">
+  <div class="container">
+    <div class="section-label">Architecture</div>
+    <h2 class="section-title">Designed to be read, not just run</h2>
+    <p class="section-desc">A clean separation between ingestion, transformation and output makes every stage testable, swappable and debuggable. Here is the canonical usage in code:</p>
+    <div class="arch-grid">
+      <div class="code-block">
+        <span class="code-line"><span class="code-text">from artificial_brain import Brain, SensoryCortex, Hippocampus, PrefrontalCortex</span><span class="code-comment">#</span></span>
+<span class="code-line"><span class="code-text"></span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">brain = Brain(</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">    sensory   = SensoryCortex(modality=[&#39;vision&#39;,&#39;text&#39;]),</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">    memory    = Hippocampus(capacity=10_000),          # episodic</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">    executive = PrefrontalCortex(decision=&#39;softmax&#39;),</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">)</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text"></span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">brain.perceive(input_signal)            # sensory encoding</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">brain.learn(reward=0.87)               # reinforcement + Hebbian</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">action = brain.decide(context)         # executive decision</span><span class="code-comment"></span></span>
+<span class="code-line"><span class="code-text">brain.consolidate()                   # short-term -&gt; long-term</span><span class="code-comment"></span></span>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="icon">🧱</div>
+          <h3>Modular by default</h3>
+          <p>Every concern — input, processing, output — lives behind a small interface. Swap implementations without touching call sites.</p>
+        </div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="icon">🧪</div>
+          <h3>Testable end-to-end</h3>
+          <p>Stages are pure functions of their inputs. Unit and integration tests are first-class citizens of the repo.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📦</div>
+          <h3>Deploy anywhere</h3>
+          <p>Runs as a script, a CLI, a long-running service or inside a container. No vendor lock-in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-label">Tech stack</div>
+    <h2 class="section-title">Built on a focused, proven stack</h2>
+    <p class="section-desc">Each dependency earns its place. The result is a small, maintainable dependency tree that is easy to audit and upgrade.</p>
+    <div class="tags" style="justify-content:center">
+      <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span>
+    </div>
+
+    <div class="uc-grid">
+      <div class="uc-card"><div class="uc-icon">🤖</div><div><h4>Cognitive Robotics</h4><p>Adaptive controllers that learn from reward signals in real time.</p></div></div><div class="uc-card"><div class="uc-icon">🎮</div><div><h4>Game Agents</h4><p>NPCs that learn player behaviour and adapt difficulty dynamically.</p></div></div><div class="uc-card"><div class="uc-icon">🔬</div><div><h4>Research</h4><p>A testbed for cognitive-science and neuromorphic-computing experiments.</p></div></div><div class="uc-card"><div class="uc-icon">📈</div><div><h4>Adaptive Forecasting</h4><p>Continual learning on streaming time-series with concept drift.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-cta">
+  <div class="container">
+    <div class="section-label">Get started</div>
+    <h2 class="section-title">Clone it. Run it. Ship it.</h2>
+    <p class="section-desc" style="margin:0 auto 8px">artificial_brain is open source under the MIT license. Star the repo, open an issue, or contribute — all welcome.</p>
+    <div class="cta-btns">
+      <a href="https://github.com/KajarnakLOKOSSOU2008/artificial_brain" target="_blank" rel="noopener" class="btn btn-primary">★ Star on GitHub →</a>
+      <a href="https://github.com/KajarnakLOKOSSOU2008/artificial_brain/issues" target="_blank" rel="noopener" class="btn btn-secondary">Report an issue</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <strong style="color:var(--text)">artificial_brain</strong> · Built by <a href="https://github.com/KajarnakLOKOSSOU2008" target="_blank" rel="noopener">Lokossou Dossou Kajarnak</a> · <a href="https://kajarnaklokossou2008.github.io/" target="_blank" rel="noopener">Kajarnak Tech</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('themeToggle');
+  function applyTheme(th){document.documentElement.setAttribute('data-theme',th);if(t)t.textContent=th==='dark'?'🌙':'☀';try{localStorage.setItem('artificial_brain:theme',th);}catch(e){}}
+  t && t.addEventListener('click',function(){var cur=document.documentElement.getAttribute('data-theme');applyTheme(cur==='dark'?'light':'dark');});
+  try{var saved=localStorage.getItem('artificial_brain:theme')||'dark';applyTheme(saved);}catch(e){applyTheme('dark');}
+  // Smooth-scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href');if(id.length>1){var el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}}});});
+})();
+</script>
+</body>
+</html>
